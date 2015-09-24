@@ -1,7 +1,7 @@
 baguetteBox.js
 ==============
 
-baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本。
+baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本，拥有图像放大缩小并带有相应的CSS3过度，并能在触摸屏等设备上完美展示。
 
 [Demo页面](https://feimosi.github.io/baguetteBox.js/)
 
@@ -58,6 +58,7 @@ baguetteBox.run('.gallery', {
 ```
 
 用`title` 或者 `data-caption` 标签来描述图片。
+当一个div标签里有多组a链接组成的图片时，单击其中一张图片会发现自动有左右翻页效果。
 
 demo
 ```
@@ -71,6 +72,7 @@ demo
 
 <body>
     <div class="gallery">
+    <a href="img/image-1.jpg" data-caption="图片描述"><img src="img/thumb-1.jpg"></a>
     <a href="img/image-1.jpg" data-caption="图片描述"><img src="img/thumb-1.jpg"></a>
 </div>
 </body>
@@ -92,10 +94,9 @@ The first two methods return true on success or false if there's no more images 
 
 ## 响应式图片
 
-To use this feature, simply put `data-at-{width}` attributes on `a` tags with value being a path to the desired image. `{width}` should be the maximum screen width the image can be displayed at. The script chooses the first image with `{width}` greater than or equal to the current screen width for best user experience.
-That last `data-at-X` image is used also in the case of a screen larger than X.
+如果需要响应式图片，可以分别在`a`标签加入`data-at-{width}`属性，`{width}`是图片可显示的最大宽度，baguetteBox.js会在页面初始化（窗口手动改变大小不会再响应）时选择相应的尺寸。
 
-Here's an example of what the HTML code can look like:
+下面是一些示例:
 ```html
 <a href="img/2-1.jpg" 
   data-at-450="img/thumbs/2-1.jpg" 
@@ -105,22 +106,22 @@ Here's an example of what the HTML code can look like:
     <img src="img/thumbs/2-1.jpg">
 </a>
 ```
-If you have 1366x768 resolution baguetteBox.js will choose `"img/medium/2-1.jpg"`. If, however, it's 1440x900 it'll choose `"img/big/2-1.jpg"`. Keep `href` attribute as a fallback (link to a bigger image e.g. of HD size) for older browsers.
+如果屏幕分辨率是1366x768，baguetteBox.js将会选择`"img/medium/2-1.jpg"`. 如果是1440x900则会选择 `"img/big/2-1.jpg"`. Keep `href` attribute as a fallback (link to a bigger image e.g. of HD size) for older browsers.
 
-## 自定义
+## 自定义配置
 
 You can pass an object with custom options as a second parameter. The following are available with their corresponding defaults:
 ```javascript
 {
-  captions: true,       // true|false|callback(element) - Display image captions
-  buttons: 'auto',      // 'auto'|true|false - Display buttons
-  async: false,         // true|false - Load files asynchronously
-  preload: 2,           // [number] - How many files should be preloaded from current image
-  animation: 'slideIn', // 'slideIn'|'fadeIn'|false - Animation type
+  captions: true,       // true|false|callback(element) - 显示图片说明
+  buttons: 'auto',      // 'auto'|true|false - 显示翻页按钮
+  async: false,         // true|false - 异步加载
+  preload: 2,           // [number] - 需要预加载图片的个数
+  animation: 'slideIn', // 'slideIn'|'fadeIn'|false - 动画
   afterShow: null,      // callback - To be run after showing the overlay
   afterHide: null,      // callback - To be run after hiding the overlay
   onChange: null,       // callback(currentIndex, imagesElements.length) - When image changes
-  filter: /.+\.(gif|jpe?g|png|webp)/i // RegExp object - pattern to match image files
+  filter: /.+\.(gif|jpe?g|png|webp)/i // RegExp object - 正则去匹配文件
 }
 ```
 * `captions: 'callback'` applies a caption returned by the callback. Invoked in the context of an array of gallery images.
