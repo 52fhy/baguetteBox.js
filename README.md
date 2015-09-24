@@ -7,6 +7,10 @@ baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本，拥�
 
 ![Demo页面快照](http://i.imgur.com/uLSDpuW.png)
 
+[github](https://github.com/feimosi/baguetteBox.js)
+[中文使用](https://github.com/52fhy/baguetteBox.js)
+
+
 ## 特点
 
 * 纯JS编写，无任何依赖
@@ -110,9 +114,9 @@ The first two methods return true on success or false if there's no more images 
 
 ## 自定义配置
 
-You can pass an object with custom options as a second parameter. The following are available with their corresponding defaults:
+你可以在第二个参数位置传入一个对象来进行一些自定义设置. 下面是可用的缺省设置:
 ```javascript
-{
+baguetteBox.run('.gallery', {
   captions: true,       // true|false|callback(element) - 显示图片说明
   buttons: 'auto',      // 'auto'|true|false - 显示翻页按钮
   async: false,         // true|false - 异步加载
@@ -122,10 +126,10 @@ You can pass an object with custom options as a second parameter. The following 
   afterHide: null,      // callback - To be run after hiding the overlay
   onChange: null,       // callback(currentIndex, imagesElements.length) - When image changes
   filter: /.+\.(gif|jpe?g|png|webp)/i // RegExp object - 正则去匹配文件
-}
+});
 ```
 * `captions: 'callback'` applies a caption returned by the callback. Invoked in the context of an array of gallery images.
-* `buttons: 'auto'` hides buttons on touch-enabled devices or when only one image is displayed.
+* `buttons: 'auto'` 在触摸设备或者只有一个图片时buttons会自动隐藏，即false.
 
 ## 兼容性
 
@@ -136,13 +140,9 @@ You can pass an object with custom options as a second parameter. The following 
 * Safari 5+
 * Sleipnir
 
-## 注释
-
-Feel free to report any bugs!
-
 ## 申明
 
-Creation of `baguetteBox.js` was inspired by a great jQuery plugin [touchTouch](https://github.com/martinaglv/touchTouch).
+`baguetteBox.js`的灵感来自一个jQuery插件:[touchTouch](https://github.com/martinaglv/touchTouch).
 
 ## 许可
 
