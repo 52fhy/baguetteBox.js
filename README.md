@@ -1,55 +1,53 @@
 baguetteBox.js
 ==============
 
-Simple and easy to use lightbox script.
+baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本。
 
-[Demo page](https://feimosi.github.io/baguetteBox.js/)
+[Demo页面](https://feimosi.github.io/baguetteBox.js/)
 
-![Demo Page screenshot](http://i.imgur.com/uLSDpuW.png)
+![Demo页面快照](http://i.imgur.com/uLSDpuW.png)
 
-## Features
+## 特点
 
-* Written in pure JavaScript, no dependencies required
-* Multiple-gallery support, allows custom options for each 
-* Supports swipe gestures on touch-screen devices
-* Modern and minimal look
-* Image captions support
-* Responsive images
-* CSS3 transitions
-* SVG buttons, no extra files to download
-* Around 2.3KB gzipped
+* 纯JS编写，无任何依赖
+* 支持多重画廊(Multiple-gallery)效果, 且允许自定义参数 
+* 支持手势滑动(仅在支持多点触控设备上)
+* 现代简约风格
+* 图像字幕支持
+* 响应式的图像
+* CSS3转换
+* SVG按钮,没有额外的文件下载
+* 压缩后大约2.3KB
 
-## Installation
+## 安装方法
 
-### npm
+### 使用npm安装
 
 `npm install baguettebox.js`
 
-### Bower
+### 使用Bower
 
 `bower install baguettebox.js`
 
-### Manually
+### 通用安装方法安装
 
-1. Download `baguetteBox.min.css` and `baguetteBox.min.js` files from `dist` folder.
-2. Include them somewhere in your document:
+下载baguetteBox.min.css和baguetteBox.min.js文件并添加到你的页面:
 
   ```html
 <link rel="stylesheet" href="css/baguetteBox.min.css">
 <script src="js/baguetteBox.min.js" async></script>
   ```
 
-## Usage
+## 用法
 
-### Initialization
+### 初始化脚本运行:
 
-Initialize the script by running:
 ```js
 baguetteBox.run('.gallery', {
   // Custom options
 });
 ```
-where the first argument is a selector to a gallery (or galleries) containing `a` tags. The HTML code may look like this:
+其中第一个参数是一个选择器（或画廊）包含一个标签。HTML代码可能看起来像这样：
 ```html
 <div class="gallery">
 	<a href="img/2-1.jpg" data-caption="Image caption"><img src="img/thumbs/2-1.jpg"></a>
