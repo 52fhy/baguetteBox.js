@@ -58,6 +58,29 @@ baguetteBox.run('.gallery', {
 
 To use captions put `title` or `data-caption` attribute on `a` tag.
 
+demo
+```
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+	<link rel="stylesheet" href="css/baguetteBox.css">
+	<script src="js/baguetteBox.js"></script>
+</head>
+
+<body>
+    <div class="gallery">
+    <a href="img/image-1.jpg" data-caption="图片描述"><img src="img/thumb-1.jpg"></a>
+</div>
+</body>
+
+<script>
+	baguetteBox.run('.gallery', {
+	  // Custom options
+	});
+</script>
+```
+
 ### Additional public methods
 
 * `showNext` - switch to the next image
