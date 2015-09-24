@@ -37,6 +37,7 @@ baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本。
 <link rel="stylesheet" href="css/baguetteBox.min.css">
 <script src="js/baguetteBox.min.js" async></script>
   ```
+  注意：如果使用了`async`属性，将只能运行在服务器环境，而不是当做网页直接打开，类似`file:///D:/demo/demo.html`.
 
 ## 用法
 
@@ -47,7 +48,7 @@ baguetteBox.run('.gallery', {
   // Custom options
 });
 ```
-其中第一个参数是一个选择器（或画廊）包含一个标签。HTML代码可能看起来像这样：
+其中第一个参数是一个选择器包含一个标签。HTML代码可能看起来像这样：
 ```html
 <div class="gallery">
 	<a href="img/2-1.jpg" data-caption="Image caption"><img src="img/thumbs/2-1.jpg"></a>
@@ -56,7 +57,7 @@ baguetteBox.run('.gallery', {
 </div>
 ```
 
-To use captions put `title` or `data-caption` attribute on `a` tag.
+用`title` 或者 `data-caption` 标签来描述图片。
 
 demo
 ```
@@ -81,15 +82,15 @@ demo
 </script>
 ```
 
-### Additional public methods
+### 附加方法
 
-* `showNext` - switch to the next image
-* `showPrevious` - switch to the previous image
+* `showNext` - 切换到下一张图片
+* `showPrevious` - 切换到上一张图片
 * `destroy` - remove the plugin with any event bindings
 
 The first two methods return true on success or false if there's no more images to be loaded.
 
-## Responsive images
+## 响应式图片
 
 To use this feature, simply put `data-at-{width}` attributes on `a` tags with value being a path to the desired image. `{width}` should be the maximum screen width the image can be displayed at. The script chooses the first image with `{width}` greater than or equal to the current screen width for best user experience.
 That last `data-at-X` image is used also in the case of a screen larger than X.
@@ -106,7 +107,7 @@ Here's an example of what the HTML code can look like:
 ```
 If you have 1366x768 resolution baguetteBox.js will choose `"img/medium/2-1.jpg"`. If, however, it's 1440x900 it'll choose `"img/big/2-1.jpg"`. Keep `href` attribute as a fallback (link to a bigger image e.g. of HD size) for older browsers.
 
-## Customization
+## 自定义
 
 You can pass an object with custom options as a second parameter. The following are available with their corresponding defaults:
 ```javascript
@@ -125,7 +126,7 @@ You can pass an object with custom options as a second parameter. The following 
 * `captions: 'callback'` applies a caption returned by the callback. Invoked in the context of an array of gallery images.
 * `buttons: 'auto'` hides buttons on touch-enabled devices or when only one image is displayed.
 
-## Compatibility
+## 兼容性
 
 * IE 8+
 * Chrome
@@ -134,15 +135,15 @@ You can pass an object with custom options as a second parameter. The following 
 * Safari 5+
 * Sleipnir
 
-## Notes
+## 注释
 
 Feel free to report any bugs!
 
-## Credits
+## 申明
 
 Creation of `baguetteBox.js` was inspired by a great jQuery plugin [touchTouch](https://github.com/martinaglv/touchTouch).
 
-## License
+## 许可
 
 Copyright (c) 2015 [feimosi](https://github.com/feimosi/)
 
