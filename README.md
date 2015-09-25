@@ -5,11 +5,6 @@ baguetteBox.js 是一个简单和易于使用lightbox纯JavaScript脚本，拥�
 
 [Demo页面](https://feimosi.github.io/baguetteBox.js/)
 
-![Demo页面快照](http://i.imgur.com/uLSDpuW.png)
-
-[github](https://github.com/feimosi/baguetteBox.js)
-[中文使用](https://github.com/52fhy/baguetteBox.js)
-
 
 ## 特点
 
@@ -83,7 +78,7 @@ demo
 
 <script>
 	baguetteBox.run('.gallery', {
-	  // Custom options
+	  // 自定义参数
 	});
 </script>
 ```
@@ -94,7 +89,7 @@ demo
 * `showPrevious` - 切换到上一张图片
 * `destroy` - remove the plugin with any event bindings
 
-The first two methods return true on success or false if there's no more images to be loaded.
+如果没有图像被加载,前两种方法返回true或false.
 
 ## 响应式图片
 
@@ -122,9 +117,9 @@ baguetteBox.run('.gallery', {
   async: false,         // true|false - 异步加载
   preload: 2,           // [number] - 需要预加载图片的个数
   animation: 'slideIn', // 'slideIn'|'fadeIn'|false - 动画
-  afterShow: null,      // callback - To be run after showing the overlay
-  afterHide: null,      // callback - To be run after hiding the overlay
-  onChange: null,       // callback(currentIndex, imagesElements.length) - When image changes
+  afterShow: null,      // callback - 图片展示后的回调
+  afterHide: null,      // callback - 图片消失后的回调
+  onChange: null,       // callback(currentIndex, imagesElements.length) - 图片发送改变时的回调
   filter: /.+\.(gif|jpe?g|png|webp)/i // RegExp object - 正则去匹配文件
 });
 ```
